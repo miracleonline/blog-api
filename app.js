@@ -10,6 +10,7 @@ import cookieParser from 'cookie-parser';
 
 import { config } from './config/index.js';
 import authRoutes from './routes/authRoutes.js';
+import postRoutes from './routes/postRoutes.js';
 import { notFound, errorHandler } from './middleware/error.js';
 
 const app = express();
@@ -31,6 +32,7 @@ app.use('/api', limiter);
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/posts', postRoutes);
 
 // Healthcheck
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
