@@ -15,4 +15,11 @@ A secure Blog API built with Node.js, Express, MongoDB, and JWT.
 3. `npm run dev` (http://localhost:5000)
 
 ## Endpoints
-To be added 
+- `POST /api/auth/register`
+- `POST /api/auth/login`
+- `GET /api/auth/me`
+- `GET /api/posts` (filters: `author, tag, search, from, to`, pagination: `page, limit`)
+- `GET /api/posts/:id`
+- `POST /api/posts` (auth)
+- `PATCH /api/posts/:id` (owner/admin)
+- `DELETE /api/posts/:id` (owner/admin) 
