@@ -22,4 +22,7 @@ A secure Blog API built with Node.js, Express, MongoDB, and JWT.
 - `GET /api/posts/:id`
 - `POST /api/posts` (auth)
 - `PATCH /api/posts/:id` (owner/admin)
-- `DELETE /api/posts/:id` (owner/admin) 
+- `DELETE /api/posts/:id` (owner/admin)
+- `GET /api/posts/:postId/comments`
+- `POST /api/posts/:postId/comments` (auth)
+- `DELETE /api/comments/:id` (owner/admin) 
