@@ -11,6 +11,7 @@ import cookieParser from 'cookie-parser';
 import { config } from './config/index.js';
 import authRoutes from './routes/authRoutes.js';
 import postRoutes from './routes/postRoutes.js';
+import commentRoutes, { commentIdRouter } from './routes/commentRoutes.js';
 import { notFound, errorHandler } from './middleware/error.js';
 
 const app = express();
@@ -33,6 +34,10 @@ app.use('/api', limiter);
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/posts', postRoutes);
+// nested comments under posts
+app.use('/api/posts/:postId/comments', commentRoutes);
+// comment by id (for deletion)
+app.use('/api/comments', commentIdRouter);
 
 // Healthcheck
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
